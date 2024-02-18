@@ -13,8 +13,8 @@ Usage:
 """
 
 
-wallet = "name_of_your_coldkey"
-hotkeys = ["1","2","3"] #a list with the names of all the hotkeys you want to register
+wallet = "coldkey"
+hotkeys = ["hotkey.sn??.??","hotkey.sn??.??"] #a list with the names of all the hotkeys you want to register
 highest_cost = 2.0 #The maximal amount of Tao you are willing to burn to register
 password = "" #Password for your cold key
 
@@ -31,7 +31,7 @@ while True:
         while True:
             try:
                 iterate=False
-                command = 'btcli recycle_register -subtensor.network finney --netuid 1 --wallet.name {} --wallet.hotkey {}'.format(wallet,hotkey)
+                command = 'btcli subnet register -subtensor.network finney --netuid 24 --wallet.name {} --wallet.hotkey {}'.format(wallet,hotkey)
                 # Get the current time
                 current_time = datetime.now().time()
                 
